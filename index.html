@@ -4,74 +4,68 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<style type="text/css">
+	body>div{
+		width: 200px;
+		border: 4px solid #ccc;
+		border-radius:4px;
+		margin: 0 auto;
+		overflow: hidden;
+		padding-bottom: 4px;
+	}
+	input {
+ 
+		width: 45px;
+		height: 45px;
+		border: 4px solid #ccc;
+		border-radius:4px;
+		float: left;
+		margin: 4px 0 0 4px;
+}
+	div>div{
+		width: 135px;
+		height: 37px;
+		border: 4px solid #ccc;
+		border-radius:4px;
+		margin: 4px 0 0 4px;
+		float: left;
+	}
+	
+</style>
 <script type="text/javascript">
-	function fn1(){
-		var i1 = document.getElementById("i1");
-		var i2 = document.getElementById("i2");
-		var d1 = document.getElementById("d1");
-		d1.innerText = parseFloat(i1.value)
-					+parseFloat(i2.value);
-	}
-	function fn2(){
-		var i1 = document.getElementById("i1");
-		var i2 = document.getElementById("i2");
-		var d1 = document.getElementById("d1");
-		d1.innerText = parseFloat(i1.value)
-					-parseFloat(i2.value);
-	}
-	function fn3(){
-		var i1 = document.getElementById("i1");
-		var i2 = document.getElementById("i2");
-		var d1 = document.getElementById("d1");
-		d1.innerText = parseFloat(i1.value)
-					*parseFloat(i2.value);
-	}
-	function fn4(){
-		var i1 = document.getElementById("i1");
-		var i2 = document.getElementById("i2");
-		var d1 = document.getElementById("d1");
-		d1.innerText = parseFloat(i1.value)
-					/parseFloat(i2.value);
-	}
-	function fn5(x){
-		var i1 = document.getElementById("i1");
-		var i2 = document.getElementById("i2");
-		var d1 = document.getElementById("d1");
-		switch(x){
-			case 1:
-				d1.innerText = parseFloat(i1.value)
-				+ parseFloat(i2.value);
-			break;
-			case 2:
-				d1.innerText = parseFloat(i1.value)
-				- parseFloat(i2.value);
-			break;
-			case 3:
-				d1.innerText = parseFloat(i1.value)
-				* parseFloat(i2.value);
-			break;
-			case 4:
-				d1.innerText = parseFloat(i1.value)
-				/ parseFloat(i2.value);
-			break;
+	function myfn(str){
+		//判断是哪个按钮
+		if(str=="C"){
+			d1.innerText="";
+		}else if(str=="="){
+			d1.innerText = eval(d1.innerText);
+		}else{//0-9 +-*/
+			d1.innerText+=str;
 		}
-		
 	}
 </script>
 </head>
 <body>
-	<input type="text" id="i1">
-	<input type="text" id="i2">
-	<input type="button" value="加"
-				 onclick="fn5(1)">
-	<input type="button" value="减"
-				 onclick="fn5(2)">
-	<input type="button" value="乘"
-				 onclick="fn5(3)">
-	<input type="button" value="除"
-				 onclick="fn5(4)">
-	<div id="d1"></div>
+<div>
+	<div id="d1"></div> 
+	<input type="button" value="C" onclick="myfn('C')">
+	<input type="button" value="7" onclick="myfn('7')">
+	<input type="button" value="8" onclick="myfn('8')">
+	<input type="button" value="9" onclick="myfn('9')">
+	<input type="button" value="/" onclick="myfn('/')">
+	<input type="button" value="4" onclick="myfn('4')">
+	<input type="button" value="5" onclick="myfn('5')">
+	<input type="button" value="6" onclick="myfn('6')">
+	<input type="button" value="*" onclick="myfn('*')">
+	<input type="button" value="1" onclick="myfn('1')">
+	<input type="button" value="2" onclick="myfn('2')">
+	<input type="button" value="3" onclick="myfn('3')">
+	<input type="button" value="-" onclick="myfn('-')">
+	<input type="button" value="0" onclick="myfn('0')">
+	<input type="button" value="." onclick="myfn('.')">
+	<input type="button" value="=" onclick="myfn('=')">
+	<input type="button" value="+" onclick="myfn('+')">
+</div>
 </body>
 </html>
-
-
